@@ -1,3 +1,8 @@
+# TSLite 0.4.0
+
+* Migrate functions for defining a trial. 
+* Migrate functoins for adding arms. 
+
 # TSLite 0.3.0
 
 * Migrate functions for defining arms. 

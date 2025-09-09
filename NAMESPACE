@@ -2,6 +2,9 @@
 
 export(CorrelatedPfsAndOs3)
 export(PiecewiseConstantExponentialRNG)
+export(StaggeredRecruiter)
+export(addArms)
 export(addEndpoints)
 export(arm)
 export(endpoint)
+export(trial)
