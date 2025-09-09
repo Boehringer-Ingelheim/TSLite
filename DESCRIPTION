@@ -1,0 +1,21 @@
+Package: TSLite
+Type: Package
+Title: Infrastructure of Simulation in Planning Clinical Trials
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Han", "Zhang",
+      email = "han.zhang@boehringer-ingelheim.com",
+      role = c("aut", "cre")
+    )
+  )
+Description: TSLite provides a lightweight extension to the TrialSimulator 
+ package. While TrialSimulator has already undergone substantial testing and 
+ offers a comprehensive infrastructure with advanced tools for clinical trial 
+ simulation, TSLite focues on delivering a thoroughly tested subset of its 
+ functionality. It wraps validated functions to support reliable and efficient 
+ trial simulation. Over time, more tools and functions from TrialSimulator 
+ will be incorporated into TSLite once they have passed rigorous testing. 
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
