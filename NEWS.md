@@ -1,3 +1,7 @@
+# TSLite 0.6.0
+
+* Migrate functions for defining listener. 
+
 # TSLite 0.5.0
 
 * Migrate functions for defining milestones. 

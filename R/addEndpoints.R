@@ -1,5 +1,3 @@
-
-
 #' Adding Endpoints to an Arm
 #'
 #' @description
