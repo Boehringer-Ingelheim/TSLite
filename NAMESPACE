@@ -2,4 +2,6 @@
 
 export(CorrelatedPfsAndOs3)
 export(PiecewiseConstantExponentialRNG)
+export(addEndpoints)
+export(arm)
 export(endpoint)

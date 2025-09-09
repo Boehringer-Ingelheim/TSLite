@@ -16,7 +16,9 @@ Description: TSLite provides a lightweight extension to the TrialSimulator
  functionality. It wraps validated functions to support reliable and efficient 
  trial simulation. Over time, more tools and functions from TrialSimulator 
  will be incorporated into TSLite once they have passed rigorous testing. 
-License: What license is it under?
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.3
+Imports: 
+    TrialSimulator
