@@ -1,7 +1,12 @@
+# TSLite 0.5.0
+
+* Migrate functions for defining milestones. 
+* Migrate functions for defining triggering conditions. 
+
 # TSLite 0.4.0
 
 * Migrate functions for defining a trial. 
-* Migrate functoins for adding arms. 
+* Migrate functions for adding arms. 
 
 # TSLite 0.3.0
 
