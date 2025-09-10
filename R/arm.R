@@ -13,8 +13,8 @@
 #' will be used as trial data. More than one conditions can be
 #' specified in \code{...}.
 #'
-#' @returns a summary report (html) of the endpoints in the arm accounting for
-#' subset conditions if executed in console
+#' @returns an arm object. If executed in console, a summary report (html) of
+#' the endpoints in the arm accounting for subset conditions is displayed.
 #'
 #' @export
 #'

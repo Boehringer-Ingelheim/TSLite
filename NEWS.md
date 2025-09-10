@@ -1,3 +1,7 @@
+# TSLite 0.7.0
+
+* Migrate functions for controller. 
+
 # TSLite 0.6.0
 
 * Migrate functions for defining listener. 

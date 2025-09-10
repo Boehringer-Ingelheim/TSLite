@@ -10,7 +10,7 @@
 #' \link[TSLite]{enrollment}. Refer to vignette
 #' for examples.
 #'
-#' \link{https://zhangh12.github.io/TrialSimulator/articles/conditionSystem.html}
+#' \url{https://zhangh12.github.io/TrialSimulator/articles/conditionSystem.html}
 #'
 #' Number of events for a time-to-event endpoint can vary at different
 #' milestones as more patients are randomized into a trial, or more events

@@ -39,7 +39,8 @@
 #' endpoints are tte, \code{readout} can be \code{NULL}.
 #' @param ... optional arguments for \code{generator}.
 #'
-#' @returns a summary report (html) if executed in console
+#' @returns an endpoint object. When in console, a summary report (html)
+#' of the endpoints is displayed.
 #'
 #' @export
 #'

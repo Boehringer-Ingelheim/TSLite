@@ -4,9 +4,9 @@
 #' Defining a milestone of a trial. This includes the condition to trigger it
 #' and the action to be taken automatically. Refer to vignettes for more details.
 #'
-#' \link{https://zhangh12.github.io/TrialSimulator/articles/conditionSystem.html}
+#' \url{https://zhangh12.github.io/TrialSimulator/articles/conditionSystem.html}
 #'
-#' \link{https://zhangh12.github.io/TrialSimulator/articles/actionFunctions.html}
+#' \url{https://zhangh12.github.io/TrialSimulator/articles/actionFunctions.html}
 #'
 #' @param name character. Name of milestone.
 #' @param when condition to check if this milestone should be

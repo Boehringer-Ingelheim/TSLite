@@ -8,7 +8,7 @@
 #' \link[TSLite]{enrollment} and \link[TSLite]{eventNumber}. Refer to vignette
 #' for examples.
 #'
-#' \link{https://zhangh12.github.io/TrialSimulator/articles/conditionSystem.html}
+#' \url{https://zhangh12.github.io/TrialSimulator/articles/conditionSystem.html}
 #'
 #' @param time numeric. Calendar time to trigger a milestone of a trial.
 #'

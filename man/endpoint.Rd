@@ -46,7 +46,8 @@ generating and analyzing trial data, they should be defined through
 \item{...}{optional arguments for \code{generator}.}
 }
 \value{
-a summary report (html) if executed in console
+an endpoint object. When in console, a summary report (html)
+of the endpoints is displayed.
 }
 \description{
 Define one or multiple endpoints.

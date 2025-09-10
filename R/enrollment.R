@@ -8,7 +8,7 @@
 #' \link[TSLite]{eventNumber}. Refer to vignette
 #' for examples.
 #'
-#' \link{https://zhangh12.github.io/TrialSimulator/articles/conditionSystem.html}
+#' \url{https://zhangh12.github.io/TrialSimulator/articles/conditionSystem.html}
 #'
 #' @param n integer. Number of randomized patients.
 #' @param arms vector of character. Name of arms on which the number of patients

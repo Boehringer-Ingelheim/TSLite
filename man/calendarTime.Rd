@@ -19,7 +19,7 @@ the specified duration. It can be used combined with conditions specified by
 \link[TSLite]{enrollment} and \link[TSLite]{eventNumber}. Refer to vignette
 for examples.
 
-\link{https://zhangh12.github.io/TrialSimulator/articles/conditionSystem.html}
+\url{https://zhangh12.github.io/TrialSimulator/articles/conditionSystem.html}
 }
 \examples{
 ## see vignette
