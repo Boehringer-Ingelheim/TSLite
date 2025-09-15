@@ -65,7 +65,7 @@ risk <- data.frame(
 )
 
 pfs <- endpoint(name = 'pfs', type='tte',
-                generator = PiecewiseConstantExponentialRNG,
+                generator = TrialSimulator::PiecewiseConstantExponentialRNG,
                 risk = risk, endpoint_name = 'pfs')
 
 pfs # run in console
@@ -94,7 +94,7 @@ eps # run in console
 
 pfs_and_os <- endpoint(name = c('PFS', 'os'),
                        type = c('tte', 'tte'), # order matches to name
-                       generator = CorrelatedPfsAndOs3,
+                       generator = TrialSimulator::CorrelatedPfsAndOs3,
                        h01 = 0.06, h02 = 0.30, h12 = 0.30,
                        os_name = 'os', pfs_name = 'PFS') # match to name (case sensitive)
 

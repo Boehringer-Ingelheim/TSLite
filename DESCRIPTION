@@ -1,12 +1,17 @@
 Package: TSLite
 Type: Package
 Title: Infrastructure of Simulation in Planning Clinical Trials
-Version: 0.7.0
+Version: 0.7.1
 Authors@R: c(
     person(
       "Han", "Zhang",
       email = "han.zhang@boehringer-ingelheim.com",
       role = c("aut", "cre")
+    ),
+    person(
+      "Saumil", "Shah",
+      email = "saumil.shah@boehringer-ingelheim.com",
+      role = c("ctb")
     )
   )
 Description: TSLite provides a lightweight extension to the TrialSimulator 
