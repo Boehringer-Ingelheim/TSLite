@@ -1,7 +1,7 @@
 Package: TSLite
 Type: Package
 Title: Infrastructure of Simulation in Planning Clinical Trials
-Version: 0.7.1
+Version: 0.7.2
 Authors@R: c(
     person(
       "Han", "Zhang",
@@ -26,6 +26,9 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.3
 Imports: 
+    dplyr,
+    magrittr,
+    rstudioapi,
     TrialSimulator
 Suggests: 
     survival

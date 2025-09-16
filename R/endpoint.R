@@ -1,5 +1,3 @@
-
-
 #' Defining Endpoints
 #'
 #' @description
