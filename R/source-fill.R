@@ -1,14 +1,49 @@
-#' Title
+make_env <- function(scn) {
+  e <- new.env(parent = baseenv())
+
+  if (is.data.frame(scn)) {
+    stopifnot(nrow(scn) == 1L)
+    for (nm in names(scn)) {
+      col <- scn[[nm]]
+      val <- if (is.list(col)) col[[1]] else col[1]
+      assign(nm, val, envir = e)
+    }
+  } else if (is.list(scn)) {
+    for (nm in names(scn)) assign(nm, scn[[nm]], envir = e)
+  } else {
+    stop("scenario must be a one-row data.frame or a list.")
+  }
+  e
+}
+
+to_literal <- function(x) {
+  if (!(is.atomic(x) && is.vector(x))) {
+    stop("SCN value must be an atomic vector (including length-1 scalar).")
+  }
+  if (length(x) == 1L) {
+    x1 <- unname(x)[1]
+    txt <- utils::capture.output(dput(x1))
+    return(paste(txt, collapse = ""))
+  } else {
+    txt <- utils::capture.output(dput(x))
+    return(paste(txt, collapse = ""))
+  }
+}
+
+#' Fill symbol values
 #'
-#' @param path
-#' @param scenario
-#' @param out_path
-#' @param keep_roxygen_comments
+#' Fill symbol values from the scenario tibble. `simulate()` function from
+#' each template has labeled chunks. To run this chunk in .qmd files one needs
+#' values. These values are supplied from scenario tibble. Ensure that all
+#' chunks mentioned in `simulate()` function are used, and chunk used in .qmd
+#' file exist in `simulate()` funciton.
 #'
-#' @returns
+#' @param path `character` path to R script containing `simulate()` function source
+#' @param scenario `tibble` one scenario per row tibble
+#' @param out_path `character` path for temporary output files
+#' @param keep_roxygen_comments `logical` whether to keep roxygen comments
+#'
 #' @export
-#'
-#' @examples
 fill <- function(path,
                  scenario,
                  out_path = sub("\\.R$", "_filled.R", path),
@@ -16,37 +51,9 @@ fill <- function(path,
 
   stopifnot(file.exists(path))
 
-  make_env <- function(scn) {
-    e <- new.env(parent = baseenv())
 
-    if (is.data.frame(scn)) {
-      stopifnot(nrow(scn) == 1L)
-      for (nm in names(scn)) {
-        col <- scn[[nm]]
-        val <- if (is.list(col)) col[[1]] else col[1]
-        assign(nm, val, envir = e)
-      }
-    } else if (is.list(scn)) {
-      for (nm in names(scn)) assign(nm, scn[[nm]], envir = e)
-    } else {
-      stop("scenario must be a one-row data.frame or a list.")
-    }
-    e
-  }
 
-  to_literal <- function(x) {
-    if (!(is.atomic(x) && is.vector(x))) {
-      stop("SCN value must be an atomic vector (including length-1 scalar).")
-    }
-    if (length(x) == 1L) {
-      x1 <- unname(x)[1]
-      txt <- utils::capture.output(dput(x1))
-      return(paste(txt, collapse = ""))
-    } else {
-      txt <- utils::capture.output(dput(x))
-      return(paste(txt, collapse = ""))
-    }
-  }
+
 
   normalize_with_map <- function(s) {
     keep <- which(!grepl("[ \t]", strsplit(s, "")[[1]]))
@@ -54,8 +61,7 @@ fill <- function(path,
     list(norm = norm, map = keep)
   }
 
-  lines <- readLines(path, warn = FALSE)
-  out   <- lines
+  out <- readLines(path, warn = FALSE)
   scn_env <- make_env(scenario)
 
   pat_scn <- "#\\s*SCN:\\s*(.+?)\\s*$"
