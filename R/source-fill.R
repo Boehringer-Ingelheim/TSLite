@@ -51,17 +51,13 @@ fill <- function(path,
 
   stopifnot(file.exists(path))
 
-
-
-
-
   normalize_with_map <- function(s) {
     keep <- which(!grepl("[ \t]", strsplit(s, "")[[1]]))
     norm <- paste0(strsplit(s, "")[[1]][keep], collapse = "")
     list(norm = norm, map = keep)
   }
 
-  out <- readLines(path, warn = FALSE)
+  out <- lines <- readLines(path, warn = FALSE)
   scn_env <- make_env(scenario)
 
   pat_scn <- "#\\s*SCN:\\s*(.+?)\\s*$"
