@@ -18,14 +18,14 @@
 #' still recorded in output automatically even if this action is used.
 #'
 #' @param trial a trial object returned from \code{trial()}.
-#' @param milestone_name character. Name of milestone being triggered. It is
-#' the \code{name} argument when calling \code{trial()}.
+#' @param ... (optional) arguments. This is for capturing redundant arguments
+#' in \code{milestone()} only.
 #'
 #' @returns \code{NULL}
 #' @export
 #'
-doNothing <- function(trial, milestone_name){
+doNothing <- function(trial, ...){
 
-  TrialSimulator::doNothing(trial, milestone_name)
+  TrialSimulator::doNothing(trial, ...)
 
 }

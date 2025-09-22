@@ -4,7 +4,7 @@
 \alias{milestone}
 \title{Defining Milestones of Trial}
 \usage{
-milestone(name, when, action = doNothing)
+milestone(name, when, action = doNothing, ...)
 }
 \arguments{
 \item{name}{character. Name of milestone.}
@@ -16,6 +16,8 @@ triggered.}
 If no action to be executed but simply need to record triggering time and
 number of observations/events at the triggering time, \code{action} can be
 its default value, a built-in function \code{doNothing}.}
+
+\item{...}{(optional) arguments of \code{action}.}
 }
 \value{
 a milestone object

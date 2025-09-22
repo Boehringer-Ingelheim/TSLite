@@ -15,6 +15,7 @@
 #' If no action to be executed but simply need to record triggering time and
 #' number of observations/events at the triggering time, \code{action} can be
 #' its default value, a built-in function \code{doNothing}.
+#' @param ... (optional) arguments of \code{action}.
 #'
 #' @returns a milestone object
 #' @export
@@ -22,10 +23,11 @@
 #' @examples
 #' ## See the two vignettes in description.
 #'
-milestone <- function(name, when, action = doNothing){
+milestone <- function(name, when, action = doNothing, ...){
   TrialSimulator::milestone(
     name = name,
     when = when,
-    action = action
+    action = action,
+    ...
   )
 }
