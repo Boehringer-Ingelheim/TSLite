@@ -15,18 +15,21 @@
 #' @examples
 #' ## a minimum, meaningful, and executable example,
 #' ## where a randomized trial with two arms is simulated and analyzed.
-#' library(TrialSimulator)
 #' library(survival)
 #'
 #' control <- arm(name = 'control arm')
 #' active <- arm(name = 'active arm')
 #'
-#' pfs_in_control <-
-#'   endpoint(name = 'PFS', type = 'tte', generator = rexp, rate = log(2) / 5)
+#' pfs_in_control <- endpoint(name = 'PFS',
+#'                            type = 'tte',
+#'                            generator = rexp, rate = log(2) / 5)
+#'
 #' addEndpoints(control, pfs_in_control)
 #'
-#' pfs_in_active <-
-#'   endpoint(name = 'PFS', type = 'tte', generator = rexp, rate = log(2) / 6)
+#' pfs_in_active <- endpoint(name = 'PFS',
+#'                           type = 'tte',
+#'                           generator = rexp, rate = log(2) / 6)
+#'
 #' addEndpoints(active, pfs_in_active)
 #'
 #' accrual_rate <- data.frame(end_time = c(10, Inf), piecewise_rate = c(30, 50))
@@ -39,12 +42,13 @@
 #'
 #' addArms(trial, sample_ratio = c(1, 1), control, active)
 #'
-#' action_at_final <- function(trial, milestone_name){
-#'   locked_data <- trial$get_locked_data(milestone_name)
-#'   TrialSimulator::fitLogrank(Surv(PFS, PFS_event) ~ arm,
-#'                              placebo = 'control arm',
-#'                              data = locked_data,
-#'                              alternative = 'less')
+#' action_at_final <- function(trial){
+#'   locked_data <- trial$get_locked_data('final analysis')
+#'   fit <- coxph(Surv(PFS, PFS_event) ~ I(arm != "control arm"),
+#'                data = locked_data)
+#'
+#'   trial$save(value = exp(coef(fit)), name = 'hr')
+#'
 #'   invisible(NULL)
 #' }
 #'

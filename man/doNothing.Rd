@@ -4,13 +4,13 @@
 \alias{doNothing}
 \title{A Default Action Function}
 \usage{
-doNothing(trial, milestone_name)
+doNothing(trial, ...)
 }
 \arguments{
 \item{trial}{a trial object returned from \code{trial()}.}
 
-\item{milestone_name}{character. Name of milestone being triggered. It is
-the \code{name} argument when calling \code{trial()}.}
+\item{...}{(optional) arguments. This is for capturing redundant arguments
+in \code{milestone()} only.}
 }
 \value{
 \code{NULL}
