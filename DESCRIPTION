@@ -3,7 +3,7 @@ Type: Package
 Title: Infrastructure of Simulation in Planning Clinical Trials
 Version: 0.8.0
 Authors@R: c(
-    persion(
+    person(
       "Boehringer Ingelheim Pharma GmbH & Co. KG",
       role = c("cph", "fnd")
     ),
